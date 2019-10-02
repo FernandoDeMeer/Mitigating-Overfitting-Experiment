@@ -39,5 +39,5 @@ parser.add_argument('--val_acc_to_load', type=float, default=0) # If you have a 
 
 Enjoy!
 
-![Alt Text](https://media.giphy.com/media/TKG7SiiN7lauE1aXHH/giphy.gif)
+![](https://media.giphy.com/media/TKG7SiiN7lauE1aXHH/giphy.gif)
 
