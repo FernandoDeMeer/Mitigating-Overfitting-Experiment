@@ -1,0 +1,8 @@
+#conda create --name resnetenv python=3.5 first and then pip install requirements.txt
+
+
+Keras==2.2.4
+matplotlib==3.0.3
+pandas==0.22.*
+tensorflow==1.13.1
+scikit-learn==0.19.1
