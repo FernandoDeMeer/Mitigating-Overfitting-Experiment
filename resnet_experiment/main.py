@@ -64,11 +64,11 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    cwd = os.path.normpath(os.getcwd() + os.sep)
+    cwd = os.path.normpath(os.getcwd() + os.sep) + '/resnet_experiment'
 
     if args.data_type == 'VIX':
-
-        my_data = pd.read_csv('resnet_experiment/data/vixcurrent.csv', header=1, index_col=0)
+        print(cwd)
+        my_data = pd.read_csv(cwd + '/data/vixcurrent.csv', header=1, index_col=0)
         vix_data = my_data.loc[:, 'VIX Close']
         vix_data_arr = np.array((vix_data))
 
@@ -91,7 +91,7 @@ if __name__ == '__main__':
         y_test_data = y[99:]
 
         # We modify the test set, instead of the 28 non-overlapping periods of 30 days, we take rolling periods of 30 days until the last day we can tag (the 20th to last)
-        my_data = pd.read_csv('resnet_experiment/data/vixcurrent.csv', header=1, index_col=0)
+        my_data = pd.read_csv(cwd +'/data/vixcurrent.csv', header=1, index_col=0)
         vix_test_data = my_data.loc['10/20/2015':, 'VIX Close']
         vix_test_data_arr = np.array((vix_test_data))
 
@@ -107,8 +107,8 @@ if __name__ == '__main__':
 
     if args.improved_training and args.data_type == 'VIX':
         # Add new data to x_train, y_train
-        data = np.load('resnet_experiment/data/Synthetic_VIX_series.npy')
-        init_data = np.load('resnet_experiment/data/Synthetic_VIX_init.npy')
+        data = np.load(cwd + '/data/Synthetic_VIX_series.npy')
+        init_data = np.load(cwd + '/data/Synthetic_VIX_init.npy')
 
         synvix = np.ones(data.shape)
         synvix[:, 0] = init_data
@@ -136,7 +136,7 @@ if __name__ == '__main__':
             y_train_data = np.concatenate((y_train_data, y_new), axis=0)
 
 
-    root_dir = 'resnet_experiment/Saved models/'
+    root_dir = cwd +'/Saved models/'
 
 
     classifier_name='resnet'
