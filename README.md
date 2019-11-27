@@ -2,7 +2,8 @@
 
 # Mitigating Overfitting with GANs
 
-In this library you can find all the necessary code to reproduce the "Forecasting VIX peaks" experiment of :
+In this library you can find all the necessary code to reproduce the "Forecasting VIX peaks" experiment of : https://jfds.pm-research.com/content/early/2019/11/26/jfds.2019.1.019
+
 
 
 ## Installation
